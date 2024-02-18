@@ -140,4 +140,8 @@
     width: initial;
     align-self: stretch;
   }
+
+  .feedback__form label {
+    padding-right: 20px;
+  }
 }
