@@ -1,3 +1,4 @@
+import { FeedbackForm } from "../../FeedbackForm/FeedbackForm"
 import { Logo } from "../../Logo/Logo"
 import { PageHeading } from "../../PageHeading/PageHeading"
 import { Pattern } from "../../Pattern/Pattern"
@@ -9,6 +10,7 @@ export const Header = () => {
       <Pattern />
       <Logo />
       <PageHeading />
+      <FeedbackForm />
     </div>
   )
 }
