@@ -1,4 +1,4 @@
-.form {
+.feedback__form {
   margin-top: 20px;
   height: 123px;
   width: 470px;
@@ -9,24 +9,24 @@
   transition: background-color 0.2s, box-shadow 0.2s;
 }
 
-.form:hover,
-.form:focus {
+.feedback__form:hover,
+.feedback__form:focus {
   background-color: rgba(255, 255, 255, 0.055);
 }
 
-.form:focus-within {
+.feedback__form:focus-within {
   outline: 2px solid rgba(255, 255, 255, 0.125);
 }
 
-.form--invalid {
+.feedback__form--invalid {
   box-shadow: 0 0 0 2px #8a3d2c;
 }
 
-.form--valid {
+.feedback__form--valid {
   box-shadow: 0 0 0 2px #2c8a5e;
 }
 
-textarea {
+.feedback__form textarea {
   width: 100%;
   height: 85px;
   background-color: transparent;
@@ -36,21 +36,21 @@ textarea {
   caret-color: rgba(255, 255, 255, 0.25);
 }
 
-textarea::selection {
+.feedback__form textarea::selection {
   color: rgba(255, 255, 255, 0.85);
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-textarea::placeholder {
+.feedback__form textarea::placeholder {
   opacity: 0;
 }
 
-textarea:focus + label,
-textarea:not(:placeholder-shown) + label {
+.feedback__form textarea:focus + label,
+.feedback__form textarea:not(:placeholder-shown) + label {
   opacity: 0;
 }
 
-label {
+.feedback__form label {
   position: absolute;
   top: 13.5px;
   left: 20px;
@@ -59,20 +59,20 @@ label {
   pointer-events: none;
 }
 
-label::selection,
-label *::selection {
+.feedback__form label::selection,
+.feedback__form label *::selection {
   color: rgba(255, 255, 255, 0.85);
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-label svg {
+.feedback__form label svg {
   margin-bottom: -3px;
   margin-left: 4px;
   color: #fff;
   opacity: 0.5;
 }
 
-form div:last-child {
+.feedback__form div:last-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,21 +81,21 @@ form div:last-child {
 }
 
 /* COUNTER */
-form div:last-child p {
+.feedback__form div:last-child p {
   font-weight: 500;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.25);
   pointer-events: none;
 }
 
-form div:last-child p::selection,
-form div:last-child p > *::selection {
+.feedback__form div:last-child p::selection,
+.feedback__form div:last-child p > *::selection {
   color: rgba(255, 255, 255, 0.85);
   background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* SUBMIT BTN */
-form button {
+.feedback__form button {
   color: #161921;
   font-size: 12px;
   font-weight: 500;
@@ -110,27 +110,27 @@ form button {
   transform: translateY(-2px) translateZ(0) rotate(0);
 }
 
-form button:hover,
-form button:focus {
+.feedback__form button:hover,
+.feedback__form button:focus {
   transform: translateY(-2px) translateZ(0) scale(1.15);
 }
 
-form button:active {
+.feedback__form button:active {
   transform: translateY(-2px) translateZ(0) scale(1.07);
 }
 
-form button:hover span {
+.feedback__form button:hover span {
   transform: translateY(2px) translateZ(0);
 }
 
-form button span {
+.feedback__form button span {
   display: block;
   transition: all 0.2s;
   backface-visibility: hidden;
   transform: translateY(2px) translateZ(0) rotate(0);
 }
 
-form button span::selection {
+.feedback__form button span::selection {
   color: rgba(0, 0, 0, 0.85);
   background-color: rgba(0, 0, 0, 0.1);
 }
