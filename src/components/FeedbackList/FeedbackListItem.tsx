@@ -1,10 +1,11 @@
 import { TriangleUpIcon } from "@radix-ui/react-icons"
 import styles from "./FeedbackListItem.module.css"
 
-type FeedbackItem = {
+export type FeedbackItem = {
+  id: string
   upVoteCount: number
   badgeLetter: string
-  companyName: string
+  company: string
   text: string
   daysAgo: number
 }
@@ -14,7 +15,7 @@ type FeedbackItemProps = {
 }
 
 export const FeedbackListItem = ({ feedbackItem }: FeedbackItemProps) => {
-  const { upVoteCount, badgeLetter, companyName, text, daysAgo } = feedbackItem
+  const { upVoteCount, badgeLetter, company, text, daysAgo } = feedbackItem
 
   return (
     <li className={styles["feedback"]}>
@@ -27,7 +28,7 @@ export const FeedbackListItem = ({ feedbackItem }: FeedbackItemProps) => {
       </div>
 
       <div>
-        <p>{companyName}</p>
+        <p>{company}</p>
         <p>{text}</p>
       </div>
       <p>{daysAgo}D</p>

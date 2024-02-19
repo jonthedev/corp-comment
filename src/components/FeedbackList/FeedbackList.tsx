@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import styles from "./FeedbackList.module.css"
-import { FeedbackListItem } from "./FeedbackListItem"
+import { type FeedbackItem, FeedbackListItem } from "./FeedbackListItem"
 import { URL_COMMENTS } from "../../lib/consts"
 
 export const FeedbackList = () => {
-  const [feedbackItems, setFeedbackItems] = useState([])
+  const [feedbackItems, setFeedbackItems] = useState<FeedbackItem[]>([])
 
   useEffect(() => {
     fetch(URL_COMMENTS)
@@ -19,7 +19,7 @@ export const FeedbackList = () => {
   return (
     <ol className={styles["feedback-list"]}>
       {feedbackItems.map((feedbackItem) => (
-        <FeedbackListItem feedbackItem={feedbackItem} />
+        <FeedbackListItem key={feedbackItem.id} feedbackItem={feedbackItem} />
       ))}
     </ol>
   )
