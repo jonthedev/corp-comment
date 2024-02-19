@@ -1,10 +1,14 @@
 import styles from "./FeedbackList.module.css"
+import { TriangleUpIcon } from "@radix-ui/react-icons"
 
 export const FeedbackList = () => {
   return (
     <ol className={styles["feedback-list"]}>
       <li className={styles["feedback"]}>
-        <button></button>
+        <button>
+          <TriangleUpIcon />
+          <span>593</span>
+        </button>
         <div>
           <p>B</p>
         </div>

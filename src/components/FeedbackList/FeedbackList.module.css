@@ -188,3 +188,11 @@
   font-size: 11px;
   margin-top: -1px;
 }
+
+@media (max-width: 525px) {
+  .feedback {
+    grid-template-columns: 40px 85px 1fr;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
