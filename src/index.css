@@ -106,12 +106,6 @@ body {
 }
 
 @media (max-width: 525px) {
-  .feedback {
-    grid-template-columns: 40px 85px 1fr;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-
   .feedback--expand {
     height: initial;
     padding-top: 10px;
