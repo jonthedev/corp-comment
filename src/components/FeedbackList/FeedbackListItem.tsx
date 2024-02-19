@@ -15,6 +15,7 @@ type FeedbackItemProps = {
 
 export const FeedbackListItem = ({ feedbackItem }: FeedbackItemProps) => {
   const { upVoteCount, badgeLetter, companyName, text, daysAgo } = feedbackItem
+
   return (
     <li className={styles["feedback"]}>
       <button>
