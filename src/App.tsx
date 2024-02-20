@@ -34,7 +34,7 @@ function App() {
     fetchFeedbackItems()
   }, [])
 
-  const handleAddToList = (text: string) => {
+  const handleAddToList = async (text: string) => {
     const companyName = text
       .split(" ")
       .find(word => word.includes("#"))!
@@ -50,7 +50,17 @@ function App() {
     }
 
     setFeedbackItems([...feedbackItems, newItem])
+
+    await fetch(URL_COMMENTS, {
+      method: "POST",
+      body: JSON.stringify(newItem),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
   }
+
   return (
     <div className={styles["app"]}>
       <Footer />
