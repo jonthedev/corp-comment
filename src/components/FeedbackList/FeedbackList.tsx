@@ -11,22 +11,25 @@ export const FeedbackList = () => {
   const [errorMessage, setErrorMessage] = useState<string>("")
 
   useEffect(() => {
-    setIsLoading(true)
-    fetch(URL_COMMENTS)
-      .then(response => {
+    const fetchFeedbackItems = async () => {
+      setIsLoading(true)
+
+      try {
+        const response = await fetch(URL_COMMENTS)
+
         if (!response.ok) {
           throw new Error()
         }
-        return response.json()
-      })
-      .then(data => {
+
+        const data = await response.json()
         setFeedbackItems(data)
         setIsLoading(false)
-      })
-      .catch(() => {
+      } catch (error) {
         setErrorMessage("Something went wrong")
-        setIsLoading(false)
-      })
+      }
+      setIsLoading(false)
+    }
+    fetchFeedbackItems()
   }, [])
 
   return (
