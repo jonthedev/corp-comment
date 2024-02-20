@@ -1,17 +1,24 @@
 import styles from "./HashtagList.module.css"
+import { HashtagListItem } from "./HashtagListItem"
 
-export const HashtagList = () => {
+type HashtagListProps = {
+  companyList: string[]
+  handleSelectCompany: (company: string) => void
+}
+
+export const HashtagList = ({
+  companyList,
+  handleSelectCompany
+}: HashtagListProps) => {
   return (
     <ul className={styles["hashtags"]}>
-      <li>
-        <button>#JDev</button>
-      </li>
-      <li>
-        <button>#Nike</button>
-      </li>
-      <li>
-        <button>#Nandos</button>
-      </li>
+      {companyList.map(company => (
+        <HashtagListItem
+          company={company}
+          key={company}
+          onSelectCompany={handleSelectCompany}
+        />
+      ))}
     </ul>
   )
 }

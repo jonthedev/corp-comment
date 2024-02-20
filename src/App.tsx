@@ -11,6 +11,19 @@ function App() {
   const [feedbackItems, setFeedbackItems] = useState<TFeedbackItem[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [errorMessage, setErrorMessage] = useState<string>("")
+  const [selectedCompany, setSelectedCompany] = useState("")
+
+  const filteredCompanies = selectedCompany
+    ? feedbackItems.filter(
+        feedbackItem => feedbackItem.company === selectedCompany
+      )
+    : feedbackItems
+
+  const companyList = feedbackItems
+    .map(item => item.company)
+    .filter((company, index, array) => {
+      return array.indexOf(company) === index
+    })
 
   useEffect(() => {
     const fetchFeedbackItems = async () => {
@@ -61,6 +74,10 @@ function App() {
     })
   }
 
+  const handleSelectCompany = (company: string) => {
+    setSelectedCompany(company)
+  }
+
   return (
     <div className={styles["app"]}>
       <Footer />
@@ -68,11 +85,14 @@ function App() {
       <Container
         isLoading={isLoading}
         errorMessage={errorMessage}
-        feedbackItems={feedbackItems}
+        feedbackItems={filteredCompanies}
         handleAddToList={handleAddToList}
       />
 
-      <HashtagList />
+      <HashtagList
+        companyList={companyList}
+        handleSelectCompany={handleSelectCompany}
+      />
     </div>
   )
 }
