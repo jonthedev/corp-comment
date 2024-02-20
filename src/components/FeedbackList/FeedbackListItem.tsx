@@ -31,7 +31,7 @@ export const FeedbackListItem = ({ feedbackItem }: FeedbackItemProps) => {
         <p>{company}</p>
         <p>{text}</p>
       </div>
-      <p>{daysAgo}D</p>
+      <p>{daysAgo === 0 ? "NEW" : `${daysAgo} d`}</p>
     </li>
   )
 }
