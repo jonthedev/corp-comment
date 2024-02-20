@@ -3,7 +3,7 @@ import styles from "./App.module.css"
 import { Container } from "./components/layout/Container/Container"
 import { Footer } from "./components/layout/Footer/Footer"
 import { HashtagList } from "./components/HashtagList/HashtagList"
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { URL_COMMENTS } from "./lib/consts"
 import { type TFeedbackItem } from "./components/FeedbackList/FeedbackListItem"
 
@@ -13,11 +13,15 @@ function App() {
   const [errorMessage, setErrorMessage] = useState<string>("")
   const [selectedCompany, setSelectedCompany] = useState("")
 
-  const filteredCompanies = selectedCompany
-    ? feedbackItems.filter(
-        feedbackItem => feedbackItem.company === selectedCompany
-      )
-    : feedbackItems
+  const filteredCompanies = useMemo(
+    () =>
+      selectedCompany
+        ? feedbackItems.filter(
+            feedbackItem => feedbackItem.company === selectedCompany
+          )
+        : feedbackItems,
+    [feedbackItems, selectedCompany]
+  )
 
   const companyList = feedbackItems
     .map(item => item.company)
