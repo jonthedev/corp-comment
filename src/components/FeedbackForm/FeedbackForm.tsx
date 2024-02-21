@@ -28,7 +28,7 @@ export const FeedbackForm = ({ onAddToList }: FeedbackFormProps) => {
       setTimeout(() => setShowValidIndicator(false), 2000)
     } else {
       setShowInvalidIndicator(true)
-      setTimeout(() => setShowValidIndicator(false), 2000)
+      setTimeout(() => setShowInvalidIndicator(false), 2000)
       return
     }
     onAddToList(text)

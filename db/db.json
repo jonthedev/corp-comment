@@ -95,6 +95,14 @@
       "daysAgo": 0,
       "company": "nike\n",
       "badgeLetter": "N"
+    },
+    {
+      "id": 1708533368863,
+      "text": "test #nike",
+      "upVoteCount": 0,
+      "daysAgo": 0,
+      "company": "nike",
+      "badgeLetter": "N"
     }
   ]
 }
