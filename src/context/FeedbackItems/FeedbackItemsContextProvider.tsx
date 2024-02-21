@@ -29,10 +29,7 @@ export const FeedbackItemsContextProvider = ({
   const [selectedCompany, setSelectedCompany] = useState("")
 
   const handleSelectCompany = (company: string) => {
-    console.log("handleSelect", company)
-
     setSelectedCompany(company)
-    console.log(selectedCompany)
   }
 
   const filteredFeedbackItems = useMemo(
