@@ -8,6 +8,8 @@ type FeedbackFormProps = {
 
 export const FeedbackForm = ({ onAddToList }: FeedbackFormProps) => {
   const [text, setText] = useState<string>("")
+  const [showValidIndicator, setShowValidIndicator] = useState(false)
+  const [showInvalidIndicator, setShowInvalidIndicator] = useState(false)
   const charCount = MAX_CHARACTERS - text.length
 
   const handleOnChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -20,12 +22,26 @@ export const FeedbackForm = ({ onAddToList }: FeedbackFormProps) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    if (text.includes("#") && text.length > 5) {
+      setShowValidIndicator(true)
+      setTimeout(() => setShowValidIndicator(false), 2000)
+    } else {
+      setShowInvalidIndicator(true)
+      setTimeout(() => setShowValidIndicator(false), 2000)
+      return
+    }
     onAddToList(text)
     setText("")
   }
 
   return (
-    <form className={styles["feedback__form"]} onSubmit={handleSubmit}>
+    <form
+      className={`${styles["feedback__form"]} ${
+        showValidIndicator ? `${styles["feedback__form--valid"]} ` : ""
+      } ${showInvalidIndicator ? `${styles["feedback__form--invalid"]} ` : ""}`}
+      onSubmit={handleSubmit}
+    >
       {" "}
       <textarea
         id="feedback-textarea"
