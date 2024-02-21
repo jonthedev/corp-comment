@@ -1,5 +1,6 @@
 import { TriangleUpIcon } from "@radix-ui/react-icons"
 import styles from "./FeedbackListItem.module.css"
+import { useState } from "react"
 
 export type TFeedbackItem = {
   id: number
@@ -16,9 +17,15 @@ type FeedbackItemProps = {
 
 export const FeedbackListItem = ({ feedbackItem }: FeedbackItemProps) => {
   const { upVoteCount, badgeLetter, company, text, daysAgo } = feedbackItem
+  const [open, setOpen] = useState(false)
 
   return (
-    <li className={styles["feedback"]}>
+    <li
+      onClick={() => setOpen(prevS => !prevS)}
+      className={`${styles["feedback"]} ${
+        open ? styles["feedback--expand"] : ""
+      }`}
+    >
       <button>
         <TriangleUpIcon />
         <span>{upVoteCount}</span>
