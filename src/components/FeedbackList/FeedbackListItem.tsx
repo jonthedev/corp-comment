@@ -22,6 +22,7 @@ export const FeedbackListItem = ({ feedbackItem }: FeedbackItemProps) => {
 
   const handleUpVote = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation()
+    e.currentTarget.disabled = true
     setUpVoteCount(prev => ++prev)
   }
 
