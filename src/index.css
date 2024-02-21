@@ -106,12 +106,6 @@ body {
 }
 
 @media (max-width: 525px) {
-  .feedback--expand {
-    height: initial;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
   .feedback__date {
     display: none;
   }

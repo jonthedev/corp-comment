@@ -163,4 +163,10 @@
     padding-right: 15px;
     padding-left: 15px;
   }
+
+  .feedback--expand {
+    height: initial;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
