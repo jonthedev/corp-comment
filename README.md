@@ -25,8 +25,8 @@ To get started with the project, follow these steps:
 1. Clone this repository to your local machine.
 2. Install dependencies using `npm install`.
 3. Run the development server using `npm run dev`.
-4. Open your browser and navigate to `http://localhost:3000` to view the application.
-5. Open another terminal and run the `server` at root by using the following command `npx json-server db/db.json`
+4. Open your browser and navigate to `http://localhost:5173` to view the application.
+5. Open another terminal and run the `server` at root by using the following command `npx json-server db/db.json`. The server will run on `localhost:3000`
 
 ## Scripts
 
