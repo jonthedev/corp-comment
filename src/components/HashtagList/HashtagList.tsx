@@ -1,18 +1,18 @@
-import { useFeedbackItemsContext } from "../../context/FeedbackItems/utils"
+import { useFeedbackItemsStore } from "../../store/FeedbackItemsStore"
 import styles from "./HashtagList.module.css"
 import { HashtagListItem } from "./HashtagListItem"
 
 export const HashtagList = () => {
-  const { companyList } = useFeedbackItemsContext()
-  const { handleSelectCompany } = useFeedbackItemsContext()
+  const companyList = useFeedbackItemsStore(state => state.getCompanyList())
+  const selectCompany = useFeedbackItemsStore(state => state.selectCompany)
 
   return (
     <ul className={styles["hashtags"]}>
       {companyList.map(company => (
         <HashtagListItem
-          company={company}
           key={company}
-          onSelectCompany={handleSelectCompany}
+          company={company}
+          onSelectCompany={selectCompany}
         />
       ))}
     </ul>

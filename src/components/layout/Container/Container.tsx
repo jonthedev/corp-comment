@@ -1,4 +1,4 @@
-import { FeedbackList } from "../../FeedbackList/FeedbackList"
+import FeedbackList from "../../FeedbackList/FeedbackList"
 import { Header } from "../Header/Header"
 import styles from "./Container.module.css"
 
